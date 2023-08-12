@@ -1,6 +1,6 @@
-# Custom Comments Plugin
+# Comments Seeder
 
-The Custom Comments Plugin is a WordPress plugin that allows you to easily add comments to published posts with various customization options. This plugin provides a user-friendly interface to select posts, set comment dates, and enter comment details.
+The Comments Seeder Plugin is a WordPress plugin that allows you to easily add comments to published posts with various customization options. This plugin provides a user-friendly interface to select posts, set comment dates, and enter comment details.
 
 ## Installation
 
@@ -60,4 +60,5 @@ For support and inquiries, please contact [benmichaeloracion@gmail.com](mailto:b
 ---
 
 This plugin was developed by [BenDaggers](https://github.com/your).
+
 # wordpress-comment-generator

@@ -20,7 +20,7 @@ require_once plugin_dir_path(__FILE__) . 'comment_author.php';
  */
 function custom_comments_page() {
     echo '<div class="wrap">';
-    echo '<h2>Custom Comments</h2>';
+    echo '<h2 class="mb-4">Custom Comments</h2>';
 
     // Get a list of published posts
     $args = array(
@@ -29,27 +29,40 @@ function custom_comments_page() {
     );
     $query = new WP_Query($args);
 
-    // Display post selection dropdown
+    // Display post selection dropdown with Bootstrap styling
     echo '<form method="post">';
-    echo '<select name="post_id">';
+    echo '<div class="form-group">';
+    echo '<select class="form-control" name="post_id">';
     while ($query->have_posts()) {
         $query->the_post();
         echo '<option value="' . get_the_ID() . '">' . get_the_title() . '</option>';
     }
-    echo '</select><br>';
+    echo '</select>';
+    echo '</div>';
 
-    // Display date pickers
-    echo 'Start Date: <input type="text" name="start_date" class="datepicker" placeholder="Start Date"><br>';
-    echo 'End Date: <input type="text" name="end_date" class="datepicker" placeholder="End Date"><br>';
+    // Display date pickers with Bootstrap styling
+    echo '<div class="form-group">';
+    echo '<input type="text" class="form-control datepicker" name="start_date" placeholder="Start Date">';
+    echo '</div>';
+
+    echo '<div class="form-group">';
+    echo '<input type="text" class="form-control datepicker" name="end_date" placeholder="End Date">';
+    echo '</div>';
 
     // Generate comment author name based on options
     $comment_author = generate_comment_author_name(); // Use the function from the previous response
 
-    // Display comment form
+    // Display comment form with Bootstrap styling
     echo '<form method="post">';
-    echo '<input type="text" name="comment_author" placeholder="Your Name"><br>';
-    echo '<textarea name="comment_content" placeholder="Your Comment"></textarea><br>';
-    echo '<input type="submit" name="submit_comment" value="Add Comment">';
+    echo '<div class="form-group">';
+    echo '<input type="text" class="form-control" name="comment_author" placeholder="Your Name">';
+    echo '</div>';
+
+    echo '<div class="form-group">';
+    echo '<textarea class="form-control" name="comment_content" placeholder="Your Comment"></textarea>';
+    echo '</div>';
+
+    echo '<button type="submit" class="btn btn-primary" name="submit_comment">Add Comment</button>';
     echo '</form>';
 
     echo '</div>';
